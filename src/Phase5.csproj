@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Phase5</RootNamespace>
+    <AssemblyName>Phase5</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Version already in the local NuGet cache. Phase 4 used 0.105.1; the saved model loads fine in either. -->
+    <PackageReference Include="TorchSharp-cpu" Version="0.107.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\models\best_model.dat" Link="models\best_model.dat" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\models\normalization.json" Link="models\normalization.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

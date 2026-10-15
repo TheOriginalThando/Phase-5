@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+*.user
+TestResults/
+__pycache__/
+
+# Run outputs: commit selectively (e.g. git add -f results/task1/baseline/seed1/solution.csv)
+results/

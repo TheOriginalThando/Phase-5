@@ -1,0 +1,53 @@
+{
+  // Task 1. Every tuning number for this task lives here (CLAUDE.md §0.3).
+  "task": 1,
+  "experiment": "baseline",
+  "seed": 1,
+  "parallel": true,
+
+  "simulator": {
+    "kind": "nn",                      // "nn" = Phase 4 neural network, "stub" = kinematic model (§3)
+    "model_path": "models/best_model.dat",
+    "normalization_path": "models/normalization.json",
+    "stub_kv": 0.75,
+    "stub_kappa_max": 2.0
+  },
+
+  // Throttle range: the dense part of the Phase 3 training data (5th-95th percentile is 0.23-0.41),
+  // capped at the brief's 0.4 maximum (§4).
+  "limits": { "steering_max": 0.6, "throttle_min": 0.25, "throttle_max": 0.4 },
+  "hold_steps": 2,
+
+  // Start pose in the lab frame. Tracking data covers about x 0.1-4.4 m, y 0.05-3.9 m.
+  "start_x": 1.5,
+  "start_y": 2.0,
+  "start_theta": 0.0,
+  "bounds": { "min_x": 0.1, "max_x": 4.4, "min_y": 0.05, "max_y": 3.9, "margin": 0.25 },
+
+  "waypoint_spacing": 0.18,
+  "min_turn_radius": 0.33,             // measured with 'Phase5 measure' (full lock, mid throttle)
+  "target": { "x": 1.2, "y": 0.6 },
+  "sine": { "amplitude": 0.25, "wavelength": 2.0, "length": 2.0 },
+  "eight": { "shape": "gerono", "a": 0.8, "b": 0.8 },
+
+  "fitness": { "w_end": 2.0, "lambda_s": 0.1, "p_oob": 10.0, "w_head": 0.0 },
+
+  "ea": {
+    "population": 100,
+    "tournament_size": 3,
+    "elite": 2,
+    "crossover_rate": 0.9,
+    "mutation_gene_rate": 0.1,
+    "sigma_start": 0.08,
+    "sigma_end": 0.015,
+    "init_turn_fraction": 0.2,
+    "init_turn_steering": 0.2,
+    "init_noise": 0.03,
+    "seed_fraction": 0.2
+  },
+
+  // Genes from N = ceil(1.2 x path length / (v_nominal x hold_steps x 0.2 s)), v_nominal = 0.745 m/s measured.
+  "stages": [
+    { "name": "full", "genes": 6, "generations": 300, "path_fraction": 1.0 }
+  ]
+}
