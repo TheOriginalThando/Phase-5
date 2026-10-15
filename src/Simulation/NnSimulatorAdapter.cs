@@ -20,7 +20,7 @@ public sealed class NnSimulatorAdapter : ISimulator, IDisposable
     public List<Location> StepSequence(List<Command> commands, Location curLoc)
     {
         // Phase 4's two-argument overload reuses commands[0] as the first "previous" command.
-        // We start from rest instead (CLAUDE.md §2), so pass (0, 0) explicitly.
+        // We start from rest instead (Phase 5 report §3.1), so pass (0, 0) explicitly.
         List<P4.Location> path = inner.StepSequence(commands.Select(ToP4).ToList(), ToP4(curLoc), ToP4(Command.Rest));
         return path.Select(FromP4).ToList();
     }

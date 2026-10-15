@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Phase5.Tests;
 
-/// <summary>CLAUDE.md §12 steps 1–3, against the real Phase 4 network.</summary>
+/// <summary>Phase 5 report §3, checked against the real Phase 4 network.</summary>
 public sealed class NnAdapterTests : IDisposable
 {
     private readonly NnSimulatorAdapter sim = new("models/best_model.dat", "models/normalization.json");

@@ -19,7 +19,7 @@ public static class Program
           Phase5 measure [--config <file>] [--set key=value ...]
 
         run      Evolves a solution. Writes results/<task>/<experiment>/seed<k>/.
-        measure  Sanity-checks the simulator and measures speed, turning radius and evaluation time (CLAUDE.md §12).
+        measure  Sanity-checks the simulator and measures speed, turning radius and evaluation time (Phase 5 report §3.2).
         --config defaults to configs/task<N>.json. --set overrides any config value, e.g. --set fitness.lambda_s=0
         """;
 
@@ -133,7 +133,7 @@ public static class Program
         double OutOfBoundsFraction, double HeadingError, int Commands, long Evaluations, double Seconds,
         double EndDistanceFromStart, double MaxDistanceFromStart, List<string> Warnings);
 
-    /// <summary>CLAUDE.md §12 steps 3, 4 and 6: straight line and circles, speed, turning radius, timing.</summary>
+    /// <summary>Phase 5 report §3.2: straight line and circles, speed, turning radius, timing.</summary>
     private static int Measure(Options o)
     {
         RunConfig cfg = RunConfig.Load(o.Config ?? "configs/task3.json", o.Overrides);

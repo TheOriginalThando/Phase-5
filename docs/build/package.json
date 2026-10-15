@@ -1,0 +1,5 @@
+{
+  "name": "phase5-docs",
+  "private": true,
+  "dependencies": { "docx": "8.5.0" }
+}

@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace Phase5.Tasks;
 
 /// <summary>Everything a run needs. Loaded from configs/taskN.json (snake_case keys).
-/// Every tuning number lives here, never in code (CLAUDE.md §0.3).</summary>
+/// Every tuning number lives here, never in code.</summary>
 public class RunConfig
 {
     /// <summary>1 = point target, 2 = sine wave, 3 = figure eight.</summary>
@@ -148,7 +148,7 @@ public class SineConfig
 
 public class FigureEightConfig
 {
-    /// <summary>"gerono" (CLAUDE.md §5) or "bernoulli". See Curves.FigureEight.</summary>
+    /// <summary>"gerono" (Phase 5 report §4.2) or "bernoulli". See Curves.FigureEight.</summary>
     public string Shape { get; set; } = "gerono";
     public double A { get; set; } = 0.8;
     public double B { get; set; } = 0.8;
@@ -178,7 +178,7 @@ public class EaConfig
     public double InitNoise { get; set; } = 0.03;
     /// <summary>Fraction of the previous stage's population used to seed the next stage.</summary>
     public double SeedFraction { get; set; } = 0.2;
-    /// <summary>How seeds are lengthened for the next stage: "default" (CLAUDE.md §8) or "mirror". See Operators.Extend.</summary>
+    /// <summary>How seeds are lengthened for the next stage: "default" (Phase 5 report §4.5) or "mirror". See Operators.Extend.</summary>
     public string ExtendMode { get; set; } = "default";
 }
 

@@ -6,7 +6,7 @@ using Phase5.Tasks;
 
 namespace Phase5.Output;
 
-/// <summary>All files a run writes (CLAUDE.md §9). Numbers always use the invariant culture.</summary>
+/// <summary>All files a run writes (Phase 5 report §7). Numbers always use the invariant culture.</summary>
 public static class CsvWriters
 {
     private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
@@ -43,7 +43,7 @@ public static class CsvWriters
     public static void WriteWaypoints(string path, IEnumerable<Waypoint> waypoints) =>
         WriteLines(path, waypoints.Select(w => $"{F(w.X)},{F(w.Y)}").Prepend("x,y"));
 
-    /// <summary>The Phase 6 deliverable, in the lecturer's exact layout (CLAUDE.md §9): no header, one row per
+    /// <summary>The Phase 6 deliverable, in the lecturer's exact layout (Phase 5 report §7): no header, one row per
     /// timestep, "x,y,θ,τ,σ" where the pose is the predicted pose after that row's command, relative to the start pose.</summary>
     /// <param name="path">Simulated path: N+1 global poses, starting with the start pose.</param>
     public static void WriteSolution(string file, IReadOnlyList<Command> commands, IReadOnlyList<Location> path, Location start)

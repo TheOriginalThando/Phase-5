@@ -1,0 +1,113 @@
+[
+  {
+    "task": 1,
+    "title": "Drive to a target point",
+    "file": "task1_solution.csv",
+    "source": "task1/baseline/seed2",
+    "rows": 12,
+    "duration_s": 2.4,
+    "final_fitness": 0.011910480362547132,
+    "mean_waypoint_error_m": 0.00012404088304310724,
+    "end_error_m": 0.00012404088304310724,
+    "end_distance_from_start_m": 1.3416023187315471,
+    "max_distance_from_start_m": 1.3416023187315471,
+    "predicted_end": {
+      "x": 1.2000183,
+      "y": 0.5998773,
+      "theta": 0.9446437
+    },
+    "throttle_range": [
+      0.284683,
+      0.3190896
+    ],
+    "steering_range": [
+      0.00839038,
+      0.27694952
+    ],
+    "free_space_box_m": {
+      "min_x": -0.325231127,
+      "max_x": 1.5000183,
+      "min_y": -0.3,
+      "max_y": 0.8998773
+    },
+    "free_space_size_m": [
+      1.8252494270000001,
+      1.1998773
+    ],
+    "plot": "task1_expected_path.png"
+  },
+  {
+    "task": 2,
+    "title": "Follow a sine wave",
+    "file": "task2_solution.csv",
+    "source": "task2/baseline/seed3",
+    "rows": 20,
+    "duration_s": 4.0,
+    "final_fitness": 0.06500630800396963,
+    "mean_waypoint_error_m": 0.03414305422281347,
+    "end_error_m": 0.000237039033367593,
+    "end_distance_from_start_m": 2.000020143078236,
+    "max_distance_from_start_m": 2.000020143078236,
+    "predicted_end": {
+      "x": 2.00002,
+      "y": 0.000236183,
+      "theta": 0.68751043
+    },
+    "throttle_range": [
+      0.26019952,
+      0.32795608
+    ],
+    "steering_range": [
+      -0.40759826,
+      0.59910285
+    ],
+    "free_space_box_m": {
+      "min_x": -0.33620826,
+      "max_x": 2.30002,
+      "min_y": -0.51100433,
+      "max_y": 0.47885235
+    },
+    "free_space_size_m": [
+      2.6362282599999998,
+      0.9898566799999999
+    ],
+    "plot": "task2_expected_path.png"
+  },
+  {
+    "task": 3,
+    "title": "Drive a figure eight",
+    "file": "task3_solution.csv",
+    "source": "task3/staged/seed3",
+    "rows": 52,
+    "duration_s": 10.4,
+    "final_fitness": 0.07371832308211372,
+    "mean_waypoint_error_m": 0.05089645469938106,
+    "end_error_m": 0.00023276538636593728,
+    "end_distance_from_start_m": 0.0002327653863660315,
+    "max_distance_from_start_m": 1.2533672862194911,
+    "predicted_end": {
+      "x": -9.8775e-05,
+      "y": 0.000210768,
+      "theta": 0.053999994
+    },
+    "throttle_range": [
+      0.26730812,
+      0.34990227
+    ],
+    "steering_range": [
+      -0.6,
+      0.6
+    ],
+    "free_space_box_m": {
+      "min_x": -1.2905037,
+      "max_x": 1.2807697,
+      "min_y": -1.2917229,
+      "max_y": 1.29356747
+    },
+    "free_space_size_m": [
+      2.5712734,
+      2.58529037
+    ],
+    "plot": "task3_expected_path.png"
+  }
+]

@@ -2,7 +2,7 @@ using Phase5.Shared;
 
 namespace Phase5.Simulation;
 
-/// <summary>Simple kinematic stand-in for the NN (CLAUDE.md §3). Not for serious tuning.</summary>
+/// <summary>Simple kinematic stand-in for the NN (Phase 5 report §3.1). Not for serious tuning.</summary>
 public class StubSimulator : ISimulator
 {
     private readonly double kv;

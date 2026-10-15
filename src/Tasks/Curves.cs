@@ -19,7 +19,7 @@ public static class Curves
 
     /// <summary>Figure eight starting and ending at its crossing point (the origin), rotated so the starting
     /// tangent points along +x. u in [0, 0.5] is the first lobe. Shapes (config eight.shape):
-    /// "gerono"    x = a·sin t, y = (b/2)·sin 2t (CLAUDE.md §5);
+    /// "gerono"    x = a·sin t, y = (b/2)·sin 2t (Phase 5 report §4.2);
     /// "bernoulli" x = a·cos t / (1 + sin²t), y = a·sin t·cos t / (1 + sin²t), half-width a (b unused).</summary>
     public static Func<double, (double X, double Y)> FigureEight(FigureEightConfig c)
     {

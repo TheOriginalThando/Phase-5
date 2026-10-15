@@ -15,7 +15,7 @@ public record EvolutionResult(
     TimeSpan Elapsed);
 
 /// <summary>Generational EA with tournament selection, elitism, two-point crossover and Gaussian mutation,
-/// run over a list of stages (CLAUDE.md §7–8). A single stage is ordinary evolution from scratch.</summary>
+/// run over a list of stages (Phase 5 report §4.4–4.5). A single stage is ordinary evolution from scratch.</summary>
 public class EvolutionEngine
 {
     private readonly RunConfig cfg;

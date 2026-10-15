@@ -3,7 +3,7 @@ using Phase5.Tasks;
 
 namespace Phase5.Evolution;
 
-/// <summary>Initialisation, selection, crossover and mutation (CLAUDE.md §7). All randomness comes from
+/// <summary>Initialisation, selection, crossover and mutation (Phase 5 report §4.4). All randomness comes from
 /// the single seeded <see cref="Random"/> passed in, so runs are reproducible.</summary>
 public class Operators
 {
@@ -50,7 +50,7 @@ public class Operators
     }
 
     /// <summary>Copies the chromosome and appends genes until it has <paramref name="genes"/> genes (config ea.extend_mode):
-    /// "default" appends default genes (CLAUDE.md §8); "mirror" repeats the existing genes with steering negated
+    /// "default" appends default genes (Phase 5 report §4.5); "mirror" repeats the existing genes with steering negated
     /// (plus init noise), which for a figure eight turns a first lobe into a mirrored second lobe.</summary>
     public Chromosome Extend(Chromosome c, int genes)
     {

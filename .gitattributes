@@ -1,0 +1,5 @@
+# Phase 6 command files must keep their exact bytes (CRLF, no BOM)
+phase6/*.csv -text
+*.docx binary
+*.dat binary
+*.png binary

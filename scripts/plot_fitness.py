@@ -1,4 +1,4 @@
-"""Plot best and mean fitness against generation, with a line at each stage boundary (CLAUDE.md §9).
+"""Plot best and mean fitness against generation, with a line at each stage boundary (Phase 5 report §7).
 
 Usage: python scripts/plot_fitness.py results/task3/staged/seed1 [more run dirs ...] [-o out.png] [--log]
 With several run directories (e.g. 5 seeds) each run's best fitness is drawn, plus the mean across runs.

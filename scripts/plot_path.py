@@ -1,4 +1,4 @@
-"""Plot a run's simulated path with the waypoints, start/end and track bounds (CLAUDE.md §9).
+"""Plot a run's simulated path with the waypoints, start/end and track bounds (Phase 5 report §7).
 
 Usage: python scripts/plot_path.py results/task3/staged/seed1 [more run dirs ...] [-o out.png]
 Several run directories are drawn on the same axes (e.g. several seeds).

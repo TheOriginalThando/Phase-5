@@ -1,5 +1,5 @@
 {
-  // Task 3. Every tuning number for this task lives here (CLAUDE.md §0.3).
+  // Task 3. Every tuning number for this task lives here.
   "task": 3,
   "experiment": "scratch",
   "seed": 1,
@@ -28,7 +28,7 @@
   "min_turn_radius": 0.33,             // measured with 'Phase5 measure' (full lock, mid throttle)
   "target": { "x": 1.2, "y": 0.6 },
   "sine": { "amplitude": 0.25, "wavelength": 2.0, "length": 2.0 },
-  "eight": { "shape": "gerono", "a": 0.8, "b": 0.8 },
+  "eight": { "shape": "bernoulli", "a": 1.2, "b": 0.8 },   // decision D1: Bernoulli, tightest bend a/3 = 0.4 m (b unused)
 
   "fitness": { "w_end": 2.0, "lambda_s": 0.1, "p_oob": 10.0, "w_head": 0.0 },
 
@@ -43,11 +43,12 @@
     "init_turn_fraction": 0.2,
     "init_turn_steering": 0.2,
     "init_noise": 0.03,
-    "seed_fraction": 0.2
+    "seed_fraction": 0.2,
+    "extend_mode": "mirror"           // decision D2: next stage starts from the previous lobe mirrored
   },
 
   // Genes from N = ceil(1.2 x path length / (v_nominal x hold_steps x 0.2 s)), v_nominal = 0.745 m/s measured.
   "stages": [
-    { "name": "full", "genes": 20, "generations": 300, "path_fraction": 1.0 }
+    { "name": "full", "genes": 26, "generations": 300, "path_fraction": 1.0 }
   ]
 }

@@ -4,7 +4,7 @@ using Phase5.Tasks;
 
 namespace Phase5.Evolution;
 
-/// <summary>A list of genes; each gene is one command held for hold_steps timesteps (CLAUDE.md §4).</summary>
+/// <summary>A list of genes; each gene is one command held for hold_steps timesteps (Phase 5 report §4.1).</summary>
 public class Chromosome
 {
     public Command[] Genes { get; }

@@ -7,3 +7,9 @@ __pycache__/
 
 # Run outputs: commit selectively (e.g. git add -f results/task1/baseline/seed1/solution.csv)
 results/
+
+# Local guide for Claude Code; the team-facing version is the Phase 5 report
+CLAUDE.md
+docs/build/node_modules/
+docs/build/figs/
+docs/build/package-lock.json

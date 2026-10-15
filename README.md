@@ -1,7 +1,9 @@
 # WRCV402 Assignment 5 — Phase 5: Evolutionary Algorithm
 
 Evolves `<steering, throttle>` command sequences for the CPM Lab racecar, using the Phase 3/4 neural-network simulator.
-The design, and the reasons behind it, are in [CLAUDE.md](CLAUDE.md).
+The design, the results so far and the decisions the group still needs to make are in the [Phase 5 report](docs/Phase5_Report.docx).
+
+**Phase 6 team:** start with [phase6/Phase6_Handoff.docx](phase6/Phase6_Handoff.docx). The command files to drive are `phase6/task1_solution.csv`, `task2_solution.csv` and `task3_solution.csv`.
 
 ## Requirements
 
@@ -29,7 +31,7 @@ dotnet run --project src -- run --task 1 --simulator stub
 
 `--set key=value` overrides any config value. Use dots for nested keys, for example `--set ea.population=200`.
 
-To sanity-check the simulator and measure speed, turning radius and evaluation time (CLAUDE.md §12):
+To sanity-check the simulator and measure speed, turning radius and evaluation time:
 
 ```bash
 dotnet run --project src -- measure
@@ -46,7 +48,7 @@ python scripts/plot_fitness.py results/task3/staged/seed1 results/task3/staged/s
 
 | File | Contents |
 |---|---|
-| `solution.csv` | **Phase 6 deliverable.** `x,y,θ,τ,σ` per timestep, no header, pose after the command and relative to the start pose (CLAUDE.md §9) |
+| `solution.csv` | **Phase 6 deliverable.** `x,y,θ,τ,σ` per timestep, no header, pose after the command and relative to the start pose (report, section 7) |
 | `fitness_log.csv` | `generation,stage,best,mean,std` plus the best individual's W, E_end, S and out-of-bounds fraction |
 | `best_path.csv` | `x,y,theta` of the best path in the lab frame, start included |
 | `waypoints.csv`, `reference_curve.csv` | Task geometry in the lab frame, used by the plots |
@@ -55,4 +57,4 @@ python scripts/plot_fitness.py results/task3/staged/seed1 results/task3/staged/s
 
 ## Layout
 
-`src/Phase5.csproj` is a single console project. Its folders follow CLAUDE.md §11. `src/Simulation/Phase4/Simulator.cs` and `models/` are copied unchanged from the Phase 4 repo (commit `d3fc22c`). The model is identical to the Phase 3 `Results/Seed_42/best_model.dat`.
+`src/Phase5.csproj` is a single console project. Its folders are described in the report, appendix B. `src/Simulation/Phase4/Simulator.cs` and `models/` are copied unchanged from the Phase 4 repo (commit `d3fc22c`). The model is identical to the Phase 3 `Results/Seed_42/best_model.dat`.

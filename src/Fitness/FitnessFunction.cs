@@ -6,7 +6,7 @@ namespace Phase5.Fitness;
 /// <summary>The terms of F, kept separately so they can be logged and compared in the report.</summary>
 public record FitnessResult(double Total, double W, double EEnd, double S, double OutOfBoundsFraction, double HeadingError);
 
-/// <summary>F = W + w_end·E_end + λ_s·S + p_oob·(fraction out of bounds) [+ w_head·heading error]. Lower is better (CLAUDE.md §6).</summary>
+/// <summary>F = W + w_end·E_end + λ_s·S + p_oob·(fraction out of bounds) [+ w_head·heading error]. Lower is better (Phase 5 report §4.3).</summary>
 public class FitnessFunction
 {
     private readonly FitnessConfig weights;
@@ -63,11 +63,11 @@ public class FitnessFunction
     }
 
     /// <summary>Mean normalised change between consecutive genes. Steering is divided by its full range (1.2)
-    /// and throttle by 0.4, as in CLAUDE.md §6.</summary>
+    /// and throttle by 0.4, as in Phase 5 report §4.3.</summary>
     public static double Smoothness(IReadOnlyList<Command> genes, CommandLimits limits)
     {
         if (genes.Count < 2) return 0;
-        // §6 fixes the throttle divisor at 0.4, the brief's full throttle range [0, 0.4].
+        // The S formula fixes the throttle divisor at 0.4, the brief's full throttle range [0, 0.4].
         const double throttleScale = 0.4;
         double sum = 0;
         for (int i = 1; i < genes.Count; i++)

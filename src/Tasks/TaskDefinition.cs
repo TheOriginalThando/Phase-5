@@ -14,7 +14,7 @@ public record StagePlan(
     // Heading of the curve at its end (global frame), for the optional heading term. NaN if undefined.
     double EndHeading);
 
-/// <summary>A task turned into concrete waypoints and stages (CLAUDE.md §5 and §8).</summary>
+/// <summary>A task turned into concrete waypoints and stages (Phase 5 report §4.2 and §4.5).</summary>
 public class TaskDefinition
 {
     public required string Name { get; init; }
